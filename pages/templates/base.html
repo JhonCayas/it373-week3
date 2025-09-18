@@ -1,0 +1,17 @@
+{% load static %}
+<title>{% block title %} My Site {% endblock title %}</title>
+<link rel="stylesheet" href="{% static 'css/site.css' %}">
+<body>
+    <nav>
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'about' %}">About</a>
+    </nav>
+    {% block content %}
+    <h1>Welcome!</h1>
+    <ul>
+        {% for data in features %}
+        <li></li>
+        {% endfor %}
+    </ul>
+    {% endblock content %}
+</body>
