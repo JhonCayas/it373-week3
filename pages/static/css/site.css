@@ -1,4 +1,73 @@
-body{
-    color: red;
-    background-color: aliceblue;
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+nav {
+    background-color: #343a40;
+    padding: 10px 20px;
+}
+
+nav a {
+    color: #fff;
+    margin-right: 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+h1 {
+    margin: 20px;
+    font-size: 2em;
+    color: #212529;
+    text-align: center;
+}
+
+ul {
+    list-style-type: disc;
+    margin: 20px;
+    padding-left: 40px;
+}
+
+li {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+/* Gallery styles */
+div.gallery {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px;
+}
+
+figure {
+    margin: 0;
+    padding: 10px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+figure img {
+    display: block;
+    max-width: 200px;
+    
+    border-radius: 4px;
+}
+
+figcaption {
+    margin-top: 8px;
+    font-size: 0.9em;
+    color: #555;
 }
