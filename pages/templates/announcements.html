@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}Announcements{% endblock title %}
+
+{% block content %}
+<div class="container mt-4">
+  <h1 class="text-success mb-4">Announcements</h1>
+  <div class="list-group">
+    {% for slug, ann in announcements.items %}
+      <a href="{% url 'details' slug %}" class="list-group-item list-group-item-action">
+        <strong>{{ ann.title }}</strong><br>
+        <small class="text-muted">Version: {{ ann.version }} | {{ ann.date }}</small>
+        <p class="mb-0">{{ ann.short }}</p>
+      </a>
+    {% empty %}
+      <p class="text-muted">No announcements yet.</p>
+    {% endfor %}
+  </div>
+</div>
+{% endblock content %}

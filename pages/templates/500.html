@@ -1,3 +1,25 @@
-<h1>Server Error (505)</h1>
-<p>Something went wrong on our end</p>
-<a href="{% url 'home' %}">Go home</a>
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>500 - Server Error</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/slate/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body class="d-flex justify-content-center align-items-center vh-100 bg-dark text-light">
+
+    <div class="card shadow-lg text-center p-4" style="max-width: 500px; border-radius: 1rem;">
+      <div class="card-body">
+        <h1 class="display-4 text-warning mb-3">500</h1>
+        <h2 class="mb-3">Server Error</h2>
+        <p class="mb-4">Something went wrong on our end.</p>
+        <a href="{% url 'home' %}" class="btn btn-primary btn-lg rounded-pill">
+          Go Home
+        </a>
+      </div>
+    </div>
+
+  </body>
+</html>

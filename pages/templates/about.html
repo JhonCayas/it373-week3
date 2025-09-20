@@ -1,5 +1,18 @@
 {% extends 'base.html' %}
-{% block title %} About {% endblock title %}
+
+{% block title %}About{% endblock title %}
+
 {% block content %}
-<h1>This is about page</h1>
-{% endblock %}
+<div class="container mt-4">
+  <div class="card shadow-lg border-0">
+    <div class="card-body">
+      <h1 class="card-title text-success">About Us</h1>
+      <p class="card-text">
+        This is the about page of our website. Here you can learn more about our mission, vision, 
+        and the features we provide to our users.
+      </p>
+      <a href="{% url 'home' %}" class="btn btn-outline-light">Back to Home</a>
+    </div>
+  </div>
+</div>
+{% endblock content %}

@@ -1,5 +1,18 @@
 {% extends 'base.html' %}
-{% block title %} HOME {% endblock title %}
+
+{% block title %}Home{% endblock title %}
+
 {% block content %}
-<h1>This is home page</h1>
-{% endblock %}
+<div class="container mt-4">
+  <div class="card shadow-lg border-0 text-center">
+    <div class="card-body">
+      <h1 class="card-title text-success">Welcome to My Site</h1>
+      <p class="card-text">
+        This is the home page. Explore the features, browse the gallery, and stay updated with announcements.
+      </p>
+      <a href="{% url 'about' %}" class="btn btn-outline-success me-2">Learn More</a>
+      <a href="{% url 'gallery' %}" class="btn btn-outline-light">View Gallery</a>
+    </div>
+  </div>
+</div>
+{% endblock content %}

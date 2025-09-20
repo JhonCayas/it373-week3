@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}Announcement Details{% endblock title %}
+
+{% block content %}
+<div class="container mt-4">
+  <div class="card shadow-lg border-0">
+    <div class="card-body">
+      <h1 class="card-title text-success">{{ announcement.title }}</h1>
+      <p class="text-muted"><small>Posted on: {{ announcement.date }}</small></p>
+      {% if announcement.version != "N/A" %}
+        <p><span class="badge bg-success">Version {{ announcement.version }}</span></p>
+      {% endif %}
+      <p class="card-text">{{ announcement.long }}</p>
+      <div class="mt-4 d-flex gap-2">
+        <a href="{% url 'announcements' %}" class="btn btn-outline-light">Back to Announcements</a>
+        <button id="toggleBtn" class="btn btn-outline-success">Read more</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const btn = document.getElementById("toggleBtn");
+    const text = document.querySelector(".card-text");
+
+    const fullText = text.innerHTML;
+    const shortText = fullText.slice(0, 150) + "...";
+
+    let expanded = false;
+    text.innerHTML = shortText;
+
+    btn.addEventListener("click", function () {
+      if (expanded) {
+        text.innerHTML = shortText;
+        btn.innerText = "Read more";
+      } else {
+        text.innerHTML = fullText;
+        btn.innerText = "Show less";
+      }
+      expanded = !expanded;
+    });
+  });
+</script>
+{% endblock content %}
