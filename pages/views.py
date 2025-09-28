@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.shortcuts import render, get_object_or_404
 from django.http import Http404
+from pages.models import Post
 
 # Create your views here.
 def home(request):
@@ -85,3 +86,11 @@ def details(request, slug):
 
 def announcements(request):
     return render(request, 'announcements.html', {"announcements": ANNOUNCEMENTS})
+
+def post_list(request):
+    posts = Post.objects.all().prefetch_related('comments')
+    context = {
+        'posts' : posts,
+        'title' : 'Posts',
+    }
+    return render(request, 'post_list.html', context)

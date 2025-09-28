@@ -10,4 +10,5 @@ urlpatterns = [
     path('announcements/<str:slug>/', views.details, name='details'),
     path('gallery/', views.gallery, name='gallery'),
     path('announcements/', views.announcements, name='announcements'),
+    path('posts/', views.post_list, name='post_list'),
 ]
